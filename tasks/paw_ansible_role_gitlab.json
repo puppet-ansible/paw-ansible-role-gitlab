@@ -1,0 +1,276 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Execute the entire Ansible role imperatively",
+  "input_method": "stdin",
+  "parameters": {
+    "gitlab_external_url": {
+      "description": "Ansible role variable (default: https://{{ gitlab_domain }}/)",
+      "type": "Optional[String]"
+    },
+    "gitlab_time_zone": {
+      "description": "Optional settings.",
+      "type": "Optional[String]"
+    },
+    "gitlab_backup_keep_time": {
+      "description": "Ansible role variable (default: 604800)",
+      "type": "Optional[String]"
+    },
+    "gitlab_email_from": {
+      "description": "Ansible role variable (default: gitlab@example.com)",
+      "type": "Optional[String]"
+    },
+    "gitlab_email_display_name": {
+      "description": "Ansible role variable (default: Gitlab)",
+      "type": "Optional[String]"
+    },
+    "gitlab_email_reply_to": {
+      "description": "Ansible role variable (default: gitlab@example.com)",
+      "type": "Optional[String]"
+    },
+    "gitlab_default_theme": {
+      "description": "Ansible role variable (default: 2)",
+      "type": "Optional[String]"
+    },
+    "gitlab_ssl_certificate": {
+      "description": "Ansible role variable (default: /etc/gitlab/ssl/{{ gitlab_domain }}.crt)",
+      "type": "Optional[String]"
+    },
+    "gitlab_ssl_certificate_key": {
+      "description": "Ansible role variable (default: /etc/gitlab/ssl/{{ gitlab_domain }}.key)",
+      "type": "Optional[String]"
+    },
+    "gitlab_letsencrypt_auto_renew_hour": {
+      "description": "Ansible role variable (default: 1)",
+      "type": "Optional[Integer]"
+    },
+    "gitlab_letsencrypt_auto_renew_minute": {
+      "description": "Ansible role variable (default: 30)",
+      "type": "Optional[Integer]"
+    },
+    "gitlab_letsencrypt_auto_renew_day_of_month": {
+      "description": "Ansible role variable (default: */7)",
+      "type": "Optional[String]"
+    },
+    "gitlab_git_data_dir": {
+      "description": "Ansible role variable (default: /var/opt/gitlab/git-data)",
+      "type": "Optional[String]"
+    },
+    "gitlab_backup_path": {
+      "description": "Ansible role variable (default: /var/opt/gitlab/backups)",
+      "type": "Optional[String]"
+    },
+    "gitlab_ldap_host": {
+      "description": "Ansible role variable (default: example.com)",
+      "type": "Optional[String]"
+    },
+    "gitlab_ldap_port": {
+      "description": "Ansible role variable (default: 389)",
+      "type": "Optional[String]"
+    },
+    "gitlab_ldap_uid": {
+      "description": "Ansible role variable (default: sAMAccountName)",
+      "type": "Optional[String]"
+    },
+    "gitlab_ldap_method": {
+      "description": "Ansible role variable (default: plain)",
+      "type": "Optional[String]"
+    },
+    "gitlab_ldap_bind_dn": {
+      "description": "Ansible role variable (default: CN=Username,CN=Users,DC=example,DC=com)",
+      "type": "Optional[String]"
+    },
+    "gitlab_ldap_password": {
+      "description": "Ansible role variable (default: password)",
+      "type": "Optional[String]"
+    },
+    "gitlab_ldap_base": {
+      "description": "Ansible role variable (default: DC=example,DC=com)",
+      "type": "Optional[String]"
+    },
+    "gitlab_nginx_listen_port": {
+      "description": "",
+      "type": "Optional[String]"
+    },
+    "gitlab_smtp_address": {
+      "description": "Ansible role variable (default: smtp.server)",
+      "type": "Optional[String]"
+    },
+    "gitlab_smtp_port": {
+      "description": "Ansible role variable (default: 465)",
+      "type": "Optional[String]"
+    },
+    "gitlab_smtp_user_name": {
+      "description": "Ansible role variable (default: smtp user)",
+      "type": "Optional[String]"
+    },
+    "gitlab_smtp_password": {
+      "description": "Ansible role variable (default: smtp password)",
+      "type": "Optional[String]"
+    },
+    "gitlab_smtp_domain": {
+      "description": "Ansible role variable (default: example.com)",
+      "type": "Optional[String]"
+    },
+    "gitlab_smtp_authentication": {
+      "description": "Ansible role variable (default: login)",
+      "type": "Optional[String]"
+    },
+    "gitlab_smtp_openssl_verify_mode": {
+      "description": "Ansible role variable (default: none)",
+      "type": "Optional[String]"
+    },
+    "gitlab_smtp_ca_path": {
+      "description": "Ansible role variable (default: /etc/ssl/certs)",
+      "type": "Optional[String]"
+    },
+    "gitlab_smtp_ca_file": {
+      "description": "Ansible role variable (default: /etc/ssl/certs/ca-certificates.crt)",
+      "type": "Optional[String]"
+    },
+    "gitlab_nginx_ssl_verify_client": {
+      "description": "2-way SSL Client Authentication support.",
+      "type": "Optional[String]"
+    },
+    "gitlab_nginx_ssl_client_certificate": {
+      "description": "Ansible role variable (default: )",
+      "type": "Optional[String]"
+    },
+    "gitlab_registry_external_url": {
+      "description": "Ansible role variable (default: https://gitlab.example.com:4567)",
+      "type": "Optional[String]"
+    },
+    "gitlab_registry_nginx_ssl_certificate": {
+      "description": "Ansible role variable (default: /etc/gitlab/ssl/gitlab.crt)",
+      "type": "Optional[String]"
+    },
+    "gitlab_registry_nginx_ssl_certificate_key": {
+      "description": "Ansible role variable (default: /etc/gitlab/ssl/gitlab.key)",
+      "type": "Optional[String]"
+    },
+    "setting": {
+      "description": "",
+      "type": "Optional[String]"
+    },
+    "gitlab_domain": {
+      "description": "General config.",
+      "type": "Optional[String]"
+    },
+    "gitlab_edition": {
+      "description": "Ansible role variable (default: gitlab-ce)",
+      "type": "Optional[String]"
+    },
+    "gitlab_version": {
+      "description": "Ansible role variable (default: )",
+      "type": "Optional[String]"
+    },
+    "gitlab_config_template": {
+      "description": "Ansible role variable (default: gitlab.rb.j2)",
+      "type": "Optional[String]"
+    },
+    "gitlab_redirect_http_to_https": {
+      "description": "SSL Configuration.",
+      "type": "Optional[Boolean]"
+    },
+    "gitlab_create_self_signed_cert": {
+      "description": "SSL Self-signed Certificate Configuration.",
+      "type": "Optional[Boolean]"
+    },
+    "gitlab_self_signed_cert_subj": {
+      "description": "Ansible role variable (default: /C=US/ST=Missouri/L=Saint Louis/O=IT/CN={{ gitlab_domain }})",
+      "type": "Optional[String]"
+    },
+    "gitlab_ldap_enabled": {
+      "description": "LDAP Configuration.",
+      "type": "Optional[Boolean]"
+    },
+    "gitlab_smtp_enable": {
+      "description": "SMTP Configuration",
+      "type": "Optional[Boolean]"
+    },
+    "gitlab_smtp_enable_starttls_auto": {
+      "description": "Ansible role variable (default: true)",
+      "type": "Optional[Boolean]"
+    },
+    "gitlab_smtp_tls": {
+      "description": "",
+      "type": "Optional[Boolean]"
+    },
+    "gitlab_restart_handler_failed_when": {
+      "description": "Probably best to leave this as the default, unless doing testing.",
+      "type": "Optional[String]"
+    },
+    "gitlab_dependencies": {
+      "description": "Dependencies.",
+      "type": "Optional[Array]"
+    },
+    "gitlab_download_validate_certs": {
+      "description": "Ansible role variable (default: true)",
+      "type": "Optional[Boolean]"
+    },
+    "gitlab_email_enabled": {
+      "description": "Email configuration.",
+      "type": "Optional[Boolean]"
+    },
+    "gitlab_registry_enable": {
+      "description": "Registry configuration.",
+      "type": "Optional[Boolean]"
+    },
+    "gitlab_letsencrypt_enable": {
+      "description": "LetsEncrypt configuration.",
+      "type": "Optional[Boolean]"
+    },
+    "gitlab_letsencrypt_contact_emails": {
+      "description": "Ansible role variable (default: [\"gitlab@example.com\"])",
+      "type": "Optional[Array]"
+    },
+    "gitlab_letsencrypt_auto_renew": {
+      "description": "Ansible role variable (default: true)",
+      "type": "Optional[Boolean]"
+    },
+    "par_tags": {
+      "description": "An array of Ansible tags to execute (optional)",
+      "type": "Optional[Array[String]]"
+    },
+    "par_skip_tags": {
+      "description": "An array of Ansible tags to skip (optional)",
+      "type": "Optional[Array[String]]"
+    },
+    "par_start_at_task": {
+      "description": "The name of the task to start execution at (optional)",
+      "type": "Optional[String]"
+    },
+    "par_limit": {
+      "description": "Limit playbook execution to specific hosts (optional)",
+      "type": "Optional[String]"
+    },
+    "par_verbose": {
+      "description": "Enable verbose output from Ansible (optional)",
+      "type": "Optional[Boolean]"
+    },
+    "par_check_mode": {
+      "description": "Run Ansible in check mode (dry-run) (optional)",
+      "type": "Optional[Boolean]"
+    },
+    "par_timeout": {
+      "description": "Timeout in seconds for playbook execution (optional)",
+      "type": "Optional[Integer]"
+    },
+    "par_user": {
+      "description": "Remote user to use for Ansible connections (optional)",
+      "type": "Optional[String]"
+    },
+    "par_env_vars": {
+      "description": "Additional environment variables for ansible-playbook execution (optional)",
+      "type": "Optional[Hash]"
+    }
+  },
+  "implementations": [
+    {
+      "name": "paw_ansible_role_gitlab.rb",
+      "requirements": [
+        "puppet-agent"
+      ]
+    }
+  ]
+}

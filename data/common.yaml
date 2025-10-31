@@ -1,0 +1,65 @@
+---
+paw_ansible_role_gitlab::gitlab_external_url: https://{{ gitlab_domain }}/
+paw_ansible_role_gitlab::gitlab_time_zone: UTC
+paw_ansible_role_gitlab::gitlab_backup_keep_time: '604800'
+paw_ansible_role_gitlab::gitlab_email_from: gitlab@example.com
+paw_ansible_role_gitlab::gitlab_email_display_name: Gitlab
+paw_ansible_role_gitlab::gitlab_email_reply_to: gitlab@example.com
+paw_ansible_role_gitlab::gitlab_default_theme: '2'
+paw_ansible_role_gitlab::gitlab_ssl_certificate: "/etc/gitlab/ssl/{{ gitlab_domain
+  }}.crt"
+paw_ansible_role_gitlab::gitlab_ssl_certificate_key: "/etc/gitlab/ssl/{{ gitlab_domain
+  }}.key"
+paw_ansible_role_gitlab::gitlab_letsencrypt_auto_renew_hour: 1
+paw_ansible_role_gitlab::gitlab_letsencrypt_auto_renew_minute: 30
+paw_ansible_role_gitlab::gitlab_letsencrypt_auto_renew_day_of_month: "*/7"
+paw_ansible_role_gitlab::gitlab_git_data_dir: "/var/opt/gitlab/git-data"
+paw_ansible_role_gitlab::gitlab_backup_path: "/var/opt/gitlab/backups"
+paw_ansible_role_gitlab::gitlab_ldap_host: example.com
+paw_ansible_role_gitlab::gitlab_ldap_port: '389'
+paw_ansible_role_gitlab::gitlab_ldap_uid: sAMAccountName
+paw_ansible_role_gitlab::gitlab_ldap_method: plain
+paw_ansible_role_gitlab::gitlab_ldap_bind_dn: CN=Username,CN=Users,DC=example,DC=com
+paw_ansible_role_gitlab::gitlab_ldap_password: password
+paw_ansible_role_gitlab::gitlab_ldap_base: DC=example,DC=com
+paw_ansible_role_gitlab::gitlab_smtp_address: smtp.server
+paw_ansible_role_gitlab::gitlab_smtp_port: '465'
+paw_ansible_role_gitlab::gitlab_smtp_user_name: smtp user
+paw_ansible_role_gitlab::gitlab_smtp_password: smtp password
+paw_ansible_role_gitlab::gitlab_smtp_domain: example.com
+paw_ansible_role_gitlab::gitlab_smtp_authentication: login
+paw_ansible_role_gitlab::gitlab_smtp_openssl_verify_mode: none
+paw_ansible_role_gitlab::gitlab_smtp_ca_path: "/etc/ssl/certs"
+paw_ansible_role_gitlab::gitlab_smtp_ca_file: "/etc/ssl/certs/ca-certificates.crt"
+paw_ansible_role_gitlab::gitlab_nginx_ssl_verify_client: ''
+paw_ansible_role_gitlab::gitlab_nginx_ssl_client_certificate: ''
+paw_ansible_role_gitlab::gitlab_registry_external_url: https://gitlab.example.com:4567
+paw_ansible_role_gitlab::gitlab_registry_nginx_ssl_certificate: "/etc/gitlab/ssl/gitlab.crt"
+paw_ansible_role_gitlab::gitlab_registry_nginx_ssl_certificate_key: "/etc/gitlab/ssl/gitlab.key"
+paw_ansible_role_gitlab::gitlab_domain: gitlab
+paw_ansible_role_gitlab::gitlab_edition: gitlab-ce
+paw_ansible_role_gitlab::gitlab_version: ''
+paw_ansible_role_gitlab::gitlab_config_template: gitlab.rb.j2
+paw_ansible_role_gitlab::gitlab_redirect_http_to_https: true
+paw_ansible_role_gitlab::gitlab_create_self_signed_cert: true
+paw_ansible_role_gitlab::gitlab_self_signed_cert_subj: "/C=US/ST=Missouri/L=Saint
+  Louis/O=IT/CN={{ gitlab_domain }}"
+paw_ansible_role_gitlab::gitlab_ldap_enabled: false
+paw_ansible_role_gitlab::gitlab_smtp_enable: false
+paw_ansible_role_gitlab::gitlab_smtp_enable_starttls_auto: true
+paw_ansible_role_gitlab::gitlab_smtp_tls: false
+paw_ansible_role_gitlab::gitlab_restart_handler_failed_when: gitlab_restart.rc !=
+  0
+paw_ansible_role_gitlab::gitlab_dependencies:
+- openssh-server
+- postfix
+- curl
+- openssl
+- tzdata
+paw_ansible_role_gitlab::gitlab_download_validate_certs: true
+paw_ansible_role_gitlab::gitlab_email_enabled: false
+paw_ansible_role_gitlab::gitlab_registry_enable: false
+paw_ansible_role_gitlab::gitlab_letsencrypt_enable: false
+paw_ansible_role_gitlab::gitlab_letsencrypt_contact_emails:
+- gitlab@example.com
+paw_ansible_role_gitlab::gitlab_letsencrypt_auto_renew: true
